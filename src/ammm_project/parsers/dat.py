@@ -1,4 +1,5 @@
 import re
+from typing import TextIO
 
 scanner = re.Scanner(
     [
@@ -90,8 +91,8 @@ class Parser:
         return token
 
 
-def parse_dat(content):
-    tokens, _ = scanner.scan(content)
+def parse(dat_file: TextIO):
+    tokens, _ = scanner.scan(dat_file.read())
     parser = Parser(tokens)
 
     return parser.parse()

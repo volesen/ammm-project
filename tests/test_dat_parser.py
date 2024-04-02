@@ -1,5 +1,6 @@
-import pytest
-from ammm_project.parsers.dat import parse_dat
+from io import StringIO
+from ammm_project.parsers.dat import parse
+
 
 def test_parse_dat():
     content = """x =  5;
@@ -16,7 +17,9 @@ w = [  3  2  1  2  1  ];
 s = [  4  4  2  2  2  ];
 """
 
-    assignments = parse_dat(content)
+    dat_file = StringIO(content)
+
+    assignments = parse(dat_file)
 
     assert assignments == {
         "x": 5,
@@ -27,4 +30,3 @@ s = [  4  4  2  2  2  ];
         "w": [3, 2, 1, 2, 1],
         "s": [4, 4, 2, 2, 2],
     }
-
