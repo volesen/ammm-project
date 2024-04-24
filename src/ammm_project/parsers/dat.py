@@ -7,7 +7,7 @@ scanner = re.Scanner(
         (r"\s+", None),
         # Line comments
         (r"//.*", None),
-        # Identifiers
+        # Identifiers (ignoring keywords for now)
         (r"[a-zA-Z_][a-zA-Z0-9_]*", lambda scanner, token: ("IDENTIFIER", token)),
         # Numbers (integers for now)
         (r"\d+", lambda scanner, token: ("INTEGER", int(token))),
@@ -42,18 +42,24 @@ class Parser:
         return assignments
 
     def parse_assignment(self):
-        identifier = self.consume("IDENTIFIER")[1]
+        identifier = self.parse_identifier()
         self.consume("ASSIGN")
         value = self.parse_value()
         self.consume("SEMICOLON")
 
         return {identifier: value}
 
+    def parse_identifier(self):
+        return self.consume("IDENTIFIER")[1]
+
     def parse_value(self):
         if self.match("LBRACKET"):
             return self.parse_list()
         else:
-            return self.consume("INTEGER")[1]
+            return self.parse_number()
+
+    def parse_number(self):
+        return self.consume("INTEGER")[1]
 
     def parse_list(self):
         values = []
