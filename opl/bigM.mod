@@ -47,8 +47,8 @@ subject to {
     // Prevent overlapping of products
     noOverlap:
         forall(i in P, j in P: i < j)
-            (X[i] == 0 || X[j] == 0
-            || xc[i] + s[i] <= xc[j]
+            (X[i] == 0 && X[j] == 0) =>
+            ( xc[i] + s[i] <= xc[j]
             || xc[j] + s[j] <= xc[i]
             || yc[i] + s[i] <= yc[j]
             || yc[j] + s[j] <= yc[i]);
