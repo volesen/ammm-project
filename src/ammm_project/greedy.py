@@ -23,8 +23,9 @@ def greedy_search(suitcase: Suitcase, squares: list[Square]):
             # because it will never fit in the suitcase
             continue
 
-        # We exploit the fact that the free cells are sorted (but officially they are not)
-        for x, y in suitcase.free_cells:
+        # We exploit the fact lexigraphical order is the same as
+        # top-leftmost order to find a free cell where the square fits
+        for x, y in sorted(suitcase.free_cells):
             if suitcase.can_fit_square(square, x, y):
                 suitcase.add_square(square, x, y)
                 break
