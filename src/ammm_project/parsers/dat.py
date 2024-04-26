@@ -7,8 +7,6 @@ scanner = re.Scanner(
         (r"\s+", None),
         # Line comments
         (r"//.*", None),
-        # Identifiers (ignoring keywords for now)
-        (r"[a-zA-Z_][a-zA-Z0-9_]*", lambda scanner, token: ("IDENTIFIER", token)),
         # Numbers (integers for now)
         (r"\d+", lambda scanner, token: ("INTEGER", int(token))),
         # Operators
@@ -18,6 +16,8 @@ scanner = re.Scanner(
         (r"\]", lambda scanner, token: ("RBRACKET", token)),
         # Semicolon
         (r";", lambda scanner, token: ("SEMICOLON", token)),
+        # Identifiers
+        (r"[a-zA-Z_][a-zA-Z0-9_]*", lambda scanner, token: ("IDENTIFIER", token)),
     ]
 )
 
