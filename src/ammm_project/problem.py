@@ -26,7 +26,7 @@ class Suitcase:
 
     weight: int
     value: int
-    contents: set[int]
+    contents: dict[int, tuple[int, int]]
 
     def __init__(self, width: int, height: int, max_weight: int):
         self.width = width
@@ -37,14 +37,14 @@ class Suitcase:
 
         self.weight = 0
         self.value = 0
-        self.contents = set()
+        self.contents = {}
 
     def can_fit_square(self, square: Square, x: int, y: int) -> bool:
         """
         Check if the square can fit in the suitcase at position (x, y).
         """
         return all(
-            0 <= x + dx < self.width and 0 <= y + dy < self.height
+            (x + dx, y + dy) in self.free_cells
             for dx in range(square.side)
             for dy in range(square.side)
         )
@@ -56,22 +56,22 @@ class Suitcase:
         return self.weight + square.weight <= self.max_weight
 
     def add_square(self, square: Square, x: int, y: int):
-        self.contents.add(square.id)
+        self.contents[square.id] = (x, y)
 
         self.weight += square.weight
         self.value += square.price
 
-        self.free_cells.update(
+        self.free_cells.difference_update(
             {(x + dx, y + dy) for dx in range(square.side) for dy in range(square.side)}
         )
 
     def remove_square(self, square: Square, x: int, y: int):
-        self.contents.remove(square.id)
+        self.contents.pop(square.id)
 
         self.weight -= square.weight
         self.value -= square.price
 
-        self.free_cells.difference_update(
+        self.free_cells.update(
             {(x + dx, y + dy) for dx in range(square.side) for dy in range(square.side)}
         )
 
