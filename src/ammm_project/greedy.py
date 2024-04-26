@@ -5,7 +5,7 @@ def q(square, suitcase):
     """
     Greedy function
     """
-    return square.price / square.side**2
+    return square.price / (square.side**2 * square.weight)
 
 
 def greedy_search(suitcase: Suitcase, squares: list[Square]):
