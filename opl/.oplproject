@@ -6,17 +6,37 @@
         		
         <config default="true" name="Configuration1" category="opl">
             			
-            <ref name="baseline.mod" type="model">
+            <ref name="project.0.dat" type="data">
 			</ref>
             			
-            <ref name="project.0.dat" type="data">
+            <ref name="binary.mod" type="model">
 			</ref>
             		
         </config>
         		
         <config default="false" name="Configuration2" category="opl">
             			
-            <ref name="baseline.mod" type="model">
+            <ref name="project.1.dat" type="data">
+			</ref>
+            			
+            <ref name="binary.mod" type="model">
+			</ref>
+            		
+        </config>
+        		
+        <config default="false" name="Configuration3" category="opl">
+            			
+            <ref name="bigM.mod" type="model">
+			</ref>
+            			
+            <ref name="project.1.dat" type="data">
+			</ref>
+            		
+        </config>
+        		
+        <config default="false" name="Configuration4" category="opl">
+            			
+            <ref name="bigM1.mod" type="model">
 			</ref>
             			
             <ref name="project.1.dat" type="data">
