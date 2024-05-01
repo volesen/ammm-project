@@ -15,3 +15,5 @@ packaging==24.0
 pluggy==1.4.0
     # via pytest
 pytest==8.1.1
+sortedcontainers==2.4.0
+    # via ammm-project

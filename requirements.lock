@@ -8,3 +8,5 @@
 #   with-sources: false
 
 -e file:.
+sortedcontainers==2.4.0
+    # via ammm-project
