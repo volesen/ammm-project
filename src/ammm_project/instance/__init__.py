@@ -4,6 +4,7 @@ import argparse
 
 from .serialize import serialize
 from .knapsack import generate as generate_knapsack_instance
+from .bin_packing import generate as generate_bin_packing_instance
 from .mix import generate as generate_mix_instance
 
 
@@ -24,13 +25,7 @@ def main():
         help="The instance generator to use",
     )
 
-    # num_items is only required for the knapsack generator
-    parser.add_argument(
-        "num_items",
-        type=int,
-        nargs="?",
-        help="The number of items to generate",
-    )
+ 
     # size of the grid is only required for the mix generator
     parser.add_argument(
         "size",
@@ -43,11 +38,11 @@ def main():
     args = parser.parse_args()
 
     if args.generator == InstanceGenerator.KNAPSACK:
-        instance = generate_knapsack_instance(args.num_items)
+        instance = generate_knapsack_instance(args.size)
     elif args.generator == InstanceGenerator.BIN_PACKING:
-        raise NotImplementedError("Bin packing instances are not implemented")
+        instance = generate_bin_packing_instance(args.size)
     elif args.generator == InstanceGenerator.MIX:
-        instance = generate_mix_instance(args.num_items)
+        instance = generate_mix_instance(args.size)
 
     print(serialize(instance))
 
