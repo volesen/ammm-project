@@ -23,11 +23,19 @@ def main():
         help="The instance generator to use",
     )
 
+    # num_items is only required for the knapsack generator
+    parser.add_argument(
+        "num_items",
+        type=int,
+        nargs="?",
+        help="The number of items to generate",
+    )
+
     # Parse the arguments, and call the appropriate function
-    args, rest = parser.parse_known_args()
+    args = parser.parse_args()
 
     if args.generator == InstanceGenerator.KNAPSACK:
-        instance = generate_knapsack_instance(int(rest[0]))
+        instance = generate_knapsack_instance(args.num_items)
     elif args.generator == InstanceGenerator.BIN_PACKING:
         raise NotImplementedError("Bin packing instances are not implemented")
     elif args.generator == InstanceGenerator.MIX:
