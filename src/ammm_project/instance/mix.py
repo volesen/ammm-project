@@ -1,9 +1,5 @@
-import sys
 import random
-from functools import lru_cache
 from typing import NamedTuple
-
-sys.setrecursionlimit(1_000_000_000)
 
 
 class Square(NamedTuple):
@@ -34,15 +30,21 @@ def split(rect: Reactangle, x: int, horizontal: bool):
         return [Reactangle(x, rect.height), Reactangle(rect.width - x, rect.height)]
 
 
-@lru_cache
 def split_into_squares(width: int, height: int):
     # Split the rectangle into squares
-    if width == height:
-        return [Square(width)]
-    elif width > height:
-        return [Square(height)] + split_into_squares(width - height, height)
-    else:
-        return [Square(width)] + split_into_squares(width, height - width)
+    squares = []
+
+    while width != height:
+        if width > height:
+            squares.append(Square(height))
+            width -= height
+        else:
+            squares.append(Square(width))
+            height -= width
+
+    squares.append(Square(width))
+
+    return squares
 
 
 def generate(size: int, num_splits: int | None = None):
@@ -71,6 +73,9 @@ def generate(size: int, num_splits: int | None = None):
 
     for r in rects:
         squares += split_into_squares(r.width, r.height)
+
+    # Double the squares
+    squares = squares + squares
 
     capacity_fraction = random.uniform(0.5, 0.9)
 
