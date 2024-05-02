@@ -8,6 +8,11 @@ authors = [
 dependencies = [
     "sortedcontainers>=2.4.0",
     "termcolor>=2.4.0",
+    "jupyterlab>=4.1.8",
+    "matplotlib>=3.8.4",
+    "seaborn>=0.13.2",
+    "numpy>=1.26.4",
+    "pandas>=2.2.2",
 ]
 readme = "README.md"
 requires-python = ">= 3.12"
