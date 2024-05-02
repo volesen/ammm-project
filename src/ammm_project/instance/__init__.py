@@ -6,7 +6,6 @@ from .serialize import serialize
 from .knapsack import generate as generate_knapsack_instance
 from .bin_packing import generate as generate_bin_packing_instance
 from .mix import generate as generate_mix_instance
-from .suitcase import generate as generate_suitcase_instance
 
 class InstanceGenerator(enum.Enum):
     KNAPSACK = "knapsack"
