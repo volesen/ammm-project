@@ -73,11 +73,11 @@ def main() -> int:
     # time elapsed, time pr. iteration, best value
 
     elapsed = end_time - start_time
-    print(f"{elapsed},{elapsed / iterations},{suitcase.value}", file=sys.stderr)
+    print(f"{elapsed},{elapsed / iterations},{suitcase.value}", file=sys.stdout)
 
     if args.verbose:
-        print(ammm_project.pretty.pretty(problem, suitcase), file=sys.stdout)
-        print(suitcase.content)
+        print(ammm_project.pretty.pretty(problem, suitcase), file=sys.stderr)
+        print(suitcase.content, file=sys.stderr)
 
     print(suitcase)
     return 0

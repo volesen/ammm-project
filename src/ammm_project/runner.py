@@ -49,7 +49,7 @@ def run(
             improvement_time = current_time
 
             elapsed = current_time - start_time
-            print(f"{elapsed},{elapsed / iterations},{solution.value}", file=sys.stderr)
+            print(f"{elapsed},{elapsed / iterations},{solution.value}", file=sys.stdout)
 
         iterations += 1
 
