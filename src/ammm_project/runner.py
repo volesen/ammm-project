@@ -7,7 +7,7 @@ from .problem import Problem
 def run(
     search_algorithm,
     problem: Problem,
-    max_time: float = 60,
+    max_time: float = 5 * 60,
     max_time_without_improvement: float | None = None,
 ):
     """
