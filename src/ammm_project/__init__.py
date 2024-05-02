@@ -50,6 +50,8 @@ def main() -> int:
 
     problem = ammm_project.problem.Problem.from_dat(dat)
 
+    print("elapsed,time_per_iteration,best_value", file=sys.stdout)
+
     start_time = time.time()
 
     if args.algorithm == Algorithm.GREEDY:
