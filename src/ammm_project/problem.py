@@ -45,6 +45,10 @@ class Problem:
 
 
 class Suitcase:
+    """
+    A suitcase is a container that can hold squares.
+    Can be used to represent a solution to the problem.
+    """
     value: int
     weight: int
     free_cells: SortedSet[tuple[int, int]]
