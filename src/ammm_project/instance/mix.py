@@ -88,3 +88,4 @@ def generate(size: int, num_splits: int | None = None):
         "p": [random.randint(1, 100) for _ in squares],
         "s": [s.size for s in squares],
     }
+
