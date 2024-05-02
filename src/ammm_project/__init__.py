@@ -78,6 +78,5 @@ def main() -> int:
     if args.verbose:
         print(ammm_project.pretty.pretty(problem, suitcase), file=sys.stderr)
         print(suitcase.content, file=sys.stderr)
-
-    print(suitcase)
+        print(suitcase, file=sys.stderr)
     return 0
