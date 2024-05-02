@@ -6,7 +6,7 @@ def generate(num_items: int):
     weights = [random.randint(1, 100) for _ in range(num_items)]
     sides = [1 for _ in range(num_items)]
 
-    capacity_fraction = random.uniform(0, 1)
+    capacity_fraction = random.uniform(0.5, 0.9)
 
     max_weight = int(sum(weights) * capacity_fraction)
 

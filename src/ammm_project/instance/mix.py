@@ -72,12 +72,14 @@ def generate(size: int, num_splits: int | None = None):
     for r in rects:
         squares += split_into_squares(r.width, r.height)
 
+    capacity_fraction = random.uniform(0.5, 0.9)
+
     return {
         "x": size,
         "y": 2 * size,
         "n": len(squares),
-        "c": sum(s.area for s in squares),
-        "w": [s.area for s in squares],
-        "p": [s.area for s in squares],
+        "c": int(capacity_fraction * sum(s.area for s in squares)),
+        "w": [random.randint(1, 100) for _ in squares],
+        "p": [random.randint(1, 100) for _ in squares],
         "s": [s.size for s in squares],
     }
