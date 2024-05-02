@@ -17,3 +17,5 @@ pluggy==1.4.0
 pytest==8.1.1
 sortedcontainers==2.4.0
     # via ammm-project
+termcolor==2.4.0
+    # via ammm-project
