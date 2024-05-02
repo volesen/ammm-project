@@ -4,7 +4,10 @@
  * Creation Date: Apr 24, 2024 at 11:09:41 AM
  *********************************************/
 
-// PLEASE ONLY CHANGE THIS FILE WHERE INDICATED.
+execute {
+  cplex.epgap = 0.01;
+  cplex.tilim = 1800;
+}
 
 int       x = ...;  // Height of the suitcase.
 int       y = ...;  // Width of the suitcase.

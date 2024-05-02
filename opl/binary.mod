@@ -4,6 +4,11 @@
  * Creation Date: Apr 24, 2024 at 10:51:51 AM
  *********************************************/
 
+execute {
+  cplex.epgap = 0.01;
+  cplex.tilim = 1800;
+}
+
 int x =  ...;
 int y =  ...;
 int c =  ...;
