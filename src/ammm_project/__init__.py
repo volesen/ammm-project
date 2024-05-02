@@ -3,15 +3,14 @@ import sys
 import time
 from enum import Enum
 
-import ammm_project.parsers.dat
 import ammm_project.grasp
 import ammm_project.greedy
 import ammm_project.local_search
+import ammm_project.parsers.dat
 import ammm_project.pretty
 import ammm_project.problem
 
 from .runner import run
-
 
 
 class Algorithm(Enum):
@@ -22,6 +21,13 @@ class Algorithm(Enum):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="AMMM project")
+    # Verbosity
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="Increase output verbosity",
+    )
     parser.add_argument("dat", type=str, help="The .dat file to solve")
     parser.add_argument(
         "--algorithm",
@@ -36,7 +42,7 @@ def main() -> int:
         default=0.5,
         help="Alpha parameter for GRASP algorithm",
     )
-    
+
     args = parser.parse_args()
 
     with open(args.dat, "r") as f:
@@ -52,9 +58,7 @@ def main() -> int:
     elif args.algorithm == Algorithm.GREEDY_WITH_LOCAL_SEARCH:
         suitcase = ammm_project.greedy.greedy_search(problem)
 
-        suitcase = ammm_project.local_search.local_search(
-            problem, suitcase
-        )
+        suitcase = ammm_project.local_search.local_search(problem, suitcase)
 
         iterations = 1
     elif args.algorithm == Algorithm.GRASP:
@@ -71,7 +75,9 @@ def main() -> int:
     elapsed = end_time - start_time
     print(f"{elapsed},{elapsed / iterations},{suitcase.value}", file=sys.stderr)
 
-    print(ammm_project.pretty.pretty(problem, suitcase), file=sys.stdout)
+    if args.verbose:
+        print(ammm_project.pretty.pretty(problem, suitcase), file=sys.stdout)
+        print(suitcase.content)
+
     print(suitcase)
-    print(suitcase.content)
     return 0
