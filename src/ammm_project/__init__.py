@@ -68,7 +68,7 @@ def main() -> int:
         def grasp_search(problem):
             return ammm_project.grasp.grasp_search(problem, alpha=args.alpha)
 
-        suitcase, iterations = run(grasp_search, problem, max_time=60)
+        suitcase, iterations = run(grasp_search, problem)
 
     end_time = time.time()
 
