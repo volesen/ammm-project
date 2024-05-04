@@ -1,0 +1,112 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_TimeLimit                               1800
+CPXPARAM_MIP_Tolerances_MIPGap                   0.01
+Found incumbent of value 0.000000 after 0.02 sec. (31.40 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 989 rows and 0 columns.
+Reduced MIP has 1217710 rows, 975650 columns, and 4383756 nonzeros.
+Reduced MIP has 974662 binaries, 988 generals, 0 SOSs, and 0 indicators.
+Presolve time = 1.07 sec. (1626.20 ticks)
+Probing time = 0.71 sec. (266.32 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Elapsed time for symmetry detection = 1.79 sec. (10018.73 ticks)
+Elapsed time for symmetry detection = 3.14 sec. (20033.39 ticks)
+Elapsed time for symmetry detection = 4.50 sec. (30048.05 ticks)
+Elapsed time for symmetry detection = 5.84 sec. (40062.71 ticks)
+Elapsed time for symmetry detection = 7.19 sec. (50077.37 ticks)
+Elapsed time for symmetry detection = 8.55 sec. (60092.03 ticks)
+Elapsed time for symmetry detection = 9.90 sec. (70106.68 ticks)
+Elapsed time for symmetry detection = 11.25 sec. (80121.34 ticks)
+Elapsed time for symmetry detection = 12.61 sec. (90136.00 ticks)
+Elapsed time for symmetry detection = 13.98 sec. (100150.66 ticks)
+Elapsed time for symmetry detection = 15.33 sec. (110165.32 ticks)
+Elapsed time for symmetry detection = 16.70 sec. (120179.98 ticks)
+Elapsed time for symmetry detection = 18.07 sec. (130194.64 ticks)
+Elapsed time for symmetry detection = 19.44 sec. (140209.29 ticks)
+Elapsed time for symmetry detection = 20.83 sec. (150223.95 ticks)
+Elapsed time for symmetry detection = 22.20 sec. (160238.61 ticks)
+Elapsed time for symmetry detection = 23.56 sec. (170253.27 ticks)
+Elapsed time for symmetry detection = 24.93 sec. (180267.93 ticks)
+Elapsed time for symmetry detection = 26.32 sec. (190282.59 ticks)
+Elapsed time for symmetry detection = 27.69 sec. (200297.25 ticks)
+Elapsed time for symmetry detection = 29.05 sec. (210311.90 ticks)
+Elapsed time for symmetry detection = 30.40 sec. (220326.56 ticks)
+Elapsed time for symmetry detection = 31.75 sec. (230341.22 ticks)
+Elapsed time for symmetry detection = 33.13 sec. (240355.88 ticks)
+Elapsed time for symmetry detection = 34.49 sec. (250370.54 ticks)
+Elapsed time for symmetry detection = 35.87 sec. (260385.20 ticks)
+Elapsed time for symmetry detection = 37.23 sec. (270399.85 ticks)
+Elapsed time for symmetry detection = 38.58 sec. (280414.51 ticks)
+Elapsed time for symmetry detection = 39.92 sec. (290429.17 ticks)
+Elapsed time for symmetry detection = 41.27 sec. (300443.83 ticks)
+Elapsed time for symmetry detection = 42.61 sec. (310458.49 ticks)
+Elapsed time for symmetry detection = 43.96 sec. (320473.15 ticks)
+Elapsed time for symmetry detection = 45.30 sec. (330487.81 ticks)
+Elapsed time for symmetry detection = 46.65 sec. (340502.46 ticks)
+Elapsed time for symmetry detection = 48.00 sec. (350517.12 ticks)
+Elapsed time for symmetry detection = 49.34 sec. (360531.78 ticks)
+Elapsed time for symmetry detection = 52.97 sec. (370531.78 ticks)
+Elapsed time for symmetry detection = 78.33 sec. (380535.86 ticks)
+Elapsed time for symmetry detection = 101.91 sec. (390535.87 ticks)
+Elapsed time for symmetry detection = 123.93 sec. (400538.99 ticks)
+Elapsed time for symmetry detection = 145.23 sec. (410546.17 ticks)
+Elapsed time for symmetry detection = 165.68 sec. (420549.15 ticks)
+Elapsed time for symmetry detection = 185.38 sec. (430552.18 ticks)
+Elapsed time for symmetry detection = 204.45 sec. (440553.12 ticks)
+Elapsed time for symmetry detection = 223.30 sec. (450553.90 ticks)
+Elapsed time for symmetry detection = 241.67 sec. (460560.68 ticks)
+Elapsed time for symmetry detection = 259.67 sec. (470567.46 ticks)
+Elapsed time for symmetry detection = 277.25 sec. (480567.50 ticks)
+Found 8.767004e+37282 symmetric permutations.
+Reduced MIP has 1217710 rows, 975650 columns, and 4383756 nonzeros.
+Reduced MIP has 974662 binaries, 988 generals, 0 SOSs, and 0 indicators.
+Presolve time = 288.01 sec. (488775.06 ticks)
+Probing time = 0.51 sec. (266.22 ticks)
+Clique table members: 36833.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 238.30 sec. (102817.31 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            0.0000    80000.0000              --- 
+*     0+    0                         8464.0000    80000.0000           845.18%
+      0     0    80000.0000 487084     8464.0000    80000.0000   974168  845.18%
+*     0+    0                         9553.0000    80000.0000           737.43%
+      0     0    80000.0000 480778     9553.0000 MIRcuts: 10000   975712  737.43%
+      0     0    80000.0000 354348     9553.0000   Cuts: 10000  1041995  737.43%
+      0     0    80000.0000 347988     9553.0000   Cuts: 10000  1053868  737.43%
+
+Clique cuts applied:  14915
+Implied bound cuts applied:  169
+Mixed integer rounding cuts applied:  2306
+Zero-half cuts applied:  5
+
+Root node processing (before b&c):
+  Real time             = 1800.95 sec. (2675744.71 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) = 1800.95 sec. (2675744.71 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 9553
+
+<<< post process
+
+
+<<< done
+
