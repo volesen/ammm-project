@@ -1,4 +1,4 @@
-from ammm_project.problem import Problem, Suitcase
+from .problem import Problem, Suitcase
 
 
 def repack_suitcase(problem: Problem, suitcase: Suitcase):
@@ -22,26 +22,26 @@ def repack_suitcase(problem: Problem, suitcase: Suitcase):
 
 def neighbourhood_solutions(problem: Problem, suitcase: Suitcase, repack: bool = False):
     for square_to_remove in suitcase.content:
-        suitcase = suitcase.remove_square(square_to_remove)
+        neighbour_suitcase = suitcase.remove_square(square_to_remove)
 
         # Repack the suitcase (optimizing for space)
         if repack:
-            suitcase = repack_suitcase(problem, suitcase)
+            neighbour_suitcase = repack_suitcase(problem, suitcase)
 
         # Try to add a new square
         for square in problem.squares:
             # Skip the square if it is already in the suitcase
-            if square in suitcase:
+            if square in neighbour_suitcase:
                 continue
 
             # Skip the square if it is too heavy
-            if suitcase.weight + square.weight > problem.max_weight:
+            if neighbour_suitcase.weight + square.weight > problem.max_weight:
                 continue
 
             # Now we try to find a free cell where the square fits
-            for x, y in suitcase.free_cells:
-                if suitcase.can_fit_square(square, x, y):
-                    yield suitcase.add_square(square, x, y)
+            for x, y in neighbour_suitcase.free_cells:
+                if neighbour_suitcase.can_fit_square(square, x, y):
+                    yield neighbour_suitcase.add_square(square, x, y)
                     break
 
 
