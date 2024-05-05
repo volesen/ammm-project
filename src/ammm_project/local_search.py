@@ -8,7 +8,7 @@ def repack_suitcase(problem: Problem, suitcase: Suitcase):
     We order the squares by side length in descending order, and we try to add them to the suitcase in that order.
     """
 
-    repacked_suitcase = Suitcase.empty(problem.width, problem.height)
+    repacked_suitcase = Suitcase(problem.width, problem.height)
 
     squares = sorted(suitcase, key=lambda s: s.side, reverse=True)
 

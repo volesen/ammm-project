@@ -16,7 +16,7 @@ def greedy_search(problem: Problem, q=q):
     Greedy search
     """
 
-    suitcase = Suitcase.empty(problem.width, problem.height)
+    suitcase = Suitcase(problem.width, problem.height)
 
     # Sort the squares by decreasing q
     squares = sorted(

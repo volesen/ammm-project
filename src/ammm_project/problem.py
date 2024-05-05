@@ -1,6 +1,7 @@
 from dataclasses import dataclass
+from functools import cached_property
 
-from sortedcontainers import SortedSet
+import numpy as np
 
 
 @dataclass(frozen=True)
@@ -49,78 +50,74 @@ class Suitcase:
     A suitcase is a container that can hold squares.
     Can be used to represent a solution to the problem.
     """
-    value: int
-    weight: int
-    free_cells: SortedSet[tuple[int, int]]
+
+    width: int
+    height: int
     content: dict[Square, tuple[int, int]]
+    _matrix: np.ndarray
 
-    def __init__(
-        self,
-        value: int,
-        weight: int,
-        free_cells: SortedSet[tuple[int, int]],
-        content: dict[Square, tuple[int, int]],
-    ):
-        self.value = value
-        self.weight = weight
-        self.free_cells = free_cells
-        self.content = content
+    def __init__(self, width: int, height: int):
+        self.width = width
+        self.height = height
 
-    # Empty suitcase
-    @classmethod
-    def empty(cls, width: int, height: int) -> "Suitcase":
-        return cls(
-            value=0,
-            weight=0,
-            free_cells=SortedSet((x, y) for x in range(width) for y in range(height)),
-            content={},
-        )
-
+        self.content = {}
+        self._matrix = np.zeros((width, height), dtype=bool)
 
     def can_fit_square(self, square: Square, x: int, y: int) -> bool:
         """
         Check if the square can fit in the suitcase at position (x, y).
         """
-        return all(
-            (x + dx, y + dy) in self.free_cells
-            for dx in range(square.side)
-            for dy in range(square.side)
+        return (
+            x + square.side <= self.width
+            and y + square.side <= self.height
+            and not np.any(self._matrix[x : x + square.side, y : y + square.side])
         )
 
     def add_square(self, square: Square, x: int, y: int):
         assert square not in self
-        
-        return Suitcase(
-            value=self.value + square.price,
-            weight=self.weight + square.weight,
-            free_cells=self.free_cells.difference(
-                {
-                    (x + dx, y + dy)
-                    for dx in range(square.side)
-                    for dy in range(square.side)
-                }
-            ),
-            content={**self.content, square: (x, y)},
-        )
+
+        suitcase = Suitcase(self.width, self.height)
+
+        # Add the square to the suitcase
+        suitcase.content = {**self.content, square: (x, y)}
+
+        # Copy the matrix
+        suitcase._matrix = np.copy(self._matrix)
+
+        # Mark the square as occupied
+        suitcase._matrix[x : x + square.side, y : y + square.side] = True
+
+        return suitcase
 
     def remove_square(self, square: Square):
-        assert square in self, f"Square {square} is not in the suitcase. Content: {self.content}"
-        
-        # Extract the corner coordinates of the square
-        (x, y) = self.content[square]
+        assert square in self
 
-        return Suitcase(
-            value=self.value - square.price,
-            weight=self.weight - square.weight,
-            free_cells=self.free_cells.union(
-                {
-                    (x + dx, y + dy)
-                    for dx in range(square.side)
-                    for dy in range(square.side)
-                }
-            ),
-            content={k: v for k, v in self.content.items() if k != square},
-        )
+        suitcase = Suitcase(self.width, self.height)
+
+        # Remove the square from the suitcase
+        suitcase.content = {k: v for k, v in self.content.items() if k != square}
+
+        # Copy the matrix
+        suitcase._matrix = np.copy(self._matrix)
+
+        # Mark the square as free
+        x, y = self.content[square]
+
+        suitcase._matrix[x : x + square.side, y : y + square.side] = False
+
+        return suitcase
+
+    @cached_property
+    def value(self) -> int:
+        return sum(square.price for square in self)
+
+    @cached_property
+    def weight(self) -> int:
+        return sum(square.weight for square in self)
+
+    @cached_property
+    def free_cells(self):
+        return np.argwhere(self._matrix == 0)
 
     def __contains__(self, square: Square) -> bool:
         return square in self.content
@@ -130,4 +127,3 @@ class Suitcase:
 
     def __repr__(self) -> str:
         return f"Suitcase(value={self.value}, weight={self.weight})"
-

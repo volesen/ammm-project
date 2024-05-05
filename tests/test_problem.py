@@ -11,7 +11,7 @@ def test_problem():
         ],
     )
 
-    suitcase = Suitcase.empty(problem.width, problem.height)
+    suitcase = Suitcase(problem.width, problem.height)
 
     assert suitcase.value == 0
 

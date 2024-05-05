@@ -39,7 +39,7 @@ def grasp_search(problem: Problem, q=q, alpha=0.5):
     """
 
     # Constructive phase
-    suitcase = Suitcase.empty(problem.width, problem.height)
+    suitcase = Suitcase(problem.width, problem.height)
 
     while True:
         candidates = list(candidate_list(problem, suitcase))
