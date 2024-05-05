@@ -119,7 +119,7 @@ class Suitcase:
                     for dy in range(square.side)
                 }
             ),
-            content={k: v for k, v in self.content.items() if v != square},
+            content={k: v for k, v in self.content.items() if k != square},
         )
 
     def __contains__(self, square: Square) -> bool:
@@ -130,5 +130,4 @@ class Suitcase:
 
     def __repr__(self) -> str:
         return f"Suitcase(value={self.value}, weight={self.weight})"
-
 

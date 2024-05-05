@@ -8,7 +8,7 @@ def run(
     search_algorithm,
     problem: Problem,
     max_time: float = 5 * 60,
-    max_time_without_improvement: float | None = 60,
+    max_time_since_improvement: float | None = None,
 ):
     """
     Run the search algorithm for a maximum amount of time
@@ -33,8 +33,8 @@ def run(
             break
 
         # Check if we have reached the maximum time without improvement
-        if max_time_without_improvement and (
-            current_time - improvement_time > max_time_without_improvement
+        if max_time_since_improvement and (
+            current_time - improvement_time > max_time_since_improvement
         ):
             break
 

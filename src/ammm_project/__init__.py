@@ -49,6 +49,14 @@ def main() -> int:
         default=5*60,
         help="Maximum time to run the algorithm",
     )
+    # Maximum time since the last improvement
+    parser.add_argument(
+        "--max-time-since-improvement",
+        type=int,
+        default=None,
+        help="Maximum time since the last improvement",
+    )
+
 
     args = parser.parse_args()
 
@@ -75,7 +83,7 @@ def main() -> int:
         def grasp_search(problem):
             return ammm_project.grasp.grasp_search(problem, alpha=args.alpha)
 
-        suitcase, iterations = run(grasp_search, problem, max_time=args.max_time)
+        suitcase, iterations = run(grasp_search, problem, max_time=args.max_time, max_time_since_improvement=args.max_time_since_improvement)
 
     end_time = time.time()
 
