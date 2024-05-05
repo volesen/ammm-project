@@ -8,7 +8,7 @@ def run(
     search_algorithm,
     problem: Problem,
     max_time: float = 5 * 60,
-    max_time_without_improvement: float | None = None,
+    max_time_without_improvement: float | None = 60,
 ):
     """
     Run the search algorithm for a maximum amount of time
