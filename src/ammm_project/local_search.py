@@ -20,7 +20,7 @@ def repack_suitcase(problem: Problem, suitcase: Suitcase):
 
     return repacked_suitcase
 
-def neighbourhood_solutions(problem: Problem, suitcase: Suitcase, repack=True):
+def neighbourhood_solutions(problem: Problem, suitcase: Suitcase, repack: bool = False):
     for square_to_remove in suitcase.content:
         suitcase = suitcase.remove_square(square_to_remove)
 
@@ -45,10 +45,10 @@ def neighbourhood_solutions(problem: Problem, suitcase: Suitcase, repack=True):
                     break
 
 
-def local_search(problem: Problem, suitcase: Suitcase):
+def local_search(problem: Problem, suitcase: Suitcase, repack: bool = False):
     # First improvement local search
     while True:
-        for neighbour in neighbourhood_solutions(problem, suitcase):
+        for neighbour in neighbourhood_solutions(problem, suitcase, repack=repack):
             if neighbour.value > suitcase.value:
                 suitcase = neighbour
                 break

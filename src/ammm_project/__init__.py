@@ -42,6 +42,13 @@ def main() -> int:
         default=0.5,
         help="Alpha parameter for GRASP algorithm",
     )
+    # Maximum time to run the algorithm
+    parser.add_argument(
+        "--max-time",
+        type=int,
+        default=5*60,
+        help="Maximum time to run the algorithm",
+    )
 
     args = parser.parse_args()
 
@@ -68,7 +75,7 @@ def main() -> int:
         def grasp_search(problem):
             return ammm_project.grasp.grasp_search(problem, alpha=args.alpha)
 
-        suitcase, iterations = run(grasp_search, problem)
+        suitcase, iterations = run(grasp_search, problem, max_time=args.max_time)
 
     end_time = time.time()
 

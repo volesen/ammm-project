@@ -7,7 +7,7 @@ from .problem import Problem, Suitcase
 
 def q(square, suitcase):
     """
-    Greedy function
+    Greedy function, higher is better
     """
 
     # Why not use the area of the square?
