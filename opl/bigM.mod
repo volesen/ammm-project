@@ -47,11 +47,11 @@ subject to {
     }
 
     // Prevent overlapping of products
-    // If two products are not selected, they cannot overlap
+    // If two products are selected, they cannot overlap
     // That is, one product must be to the left, right, above, or below the other
     noOverlap:
         forall(i in P, j in P: i < j)
-            (X[i] == 0 && X[j] == 0) =>
+            (X[i] == 1 && X[j] == 1) =>
             ( xc[i] + s[i] <= xc[j]
             || xc[j] + s[j] <= xc[i]
             || yc[i] + s[i] <= yc[j]
