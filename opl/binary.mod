@@ -65,24 +65,3 @@ subject to {
 		sum(i in W, j in H, k in P) w[k] * x_ijp[i, j, k] <= c;
 
 }
-
-
-execute {
-for (var i = 1; i <= x; i++) {
-  for (var j = 1; j <= y; j++) {
-    var found = false;
-    for (var k = 1; k <= n; k++) {
-      if (x_ijp[i][j][k] == 1) {
-        write(k);
-        found = true;
-        break;
-      }
-    }
-    if (!found) {
-      write(".");
-    }
-  }
-  writeln("");
-}
-
-}
