@@ -104,7 +104,7 @@ class Suitcase:
         )
 
     def remove_square(self, square: Square):
-        assert square in self
+        assert square in self, f"Square {square} is not in the suitcase. Content: {self.content}"
         
         # Extract the corner coordinates of the square
         (x, y) = self.content[square]
