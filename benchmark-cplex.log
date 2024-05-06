@@ -1,4 +1,14 @@
-❯ sh benchmarks-cplex.sh
+Cplex bigM2
+Benchmarking instances/bin_packing-100-2.dat
+Benchmarking instances/bin_packing-200-2.dat
+Advanced basis not built.
+Benchmarking instances/bin_packing-50-2.dat
+Benchmarking instances/knapsack-100-2.dat
+Benchmarking instances/knapsack-200-2.dat
+Benchmarking instances/knapsack-50-2.dat
+Benchmarking instances/mix-100-2.dat
+Benchmarking instances/mix-200-2.dat
+Benchmarking instances/mix-50-2.dat
 Cplex bigM
 Benchmarking instances/bin_packing-100-2.dat
 Benchmarking instances/bin_packing-200-2.dat
@@ -11,18 +21,19 @@ Benchmarking instances/mix-200-2.dat
 Benchmarking instances/mix-50-2.dat
 Cplex binary
 Benchmarking instances/bin_packing-100-2.dat
-benchmarks-cplex.sh: line 13: 56707 Killed: 9               /Applications/CPLEX_Studio2211/opl/bin/arm64_osx/oplrun opl/binary.mod $instance > benchmarks/binary-$(basename $instance .dat).out
+benchmarks-cplex.sh: line 19: 96316 Killed: 9               /Applications/CPLEX_Studio2211/opl/bin/arm64_osx/oplrun opl/binary.mod $instance > benchmarks_cplex/binary-$(basename $instance .dat).out
 Benchmarking instances/bin_packing-200-2.dat
-benchmarks-cplex.sh: line 13: 56793 Killed: 9               /Applications/CPLEX_Studio2211/opl/bin/arm64_osx/oplrun opl/binary.mod $instance > benchmarks/binary-$(basename $instance .dat).out
+benchmarks-cplex.sh: line 19: 96448 Killed: 9               /Applications/CPLEX_Studio2211/opl/bin/arm64_osx/oplrun opl/binary.mod $instance > benchmarks_cplex/binary-$(basename $instance .dat).out
 Benchmarking instances/bin_packing-50-2.dat
 Benchmarking instances/knapsack-100-2.dat
 Benchmarking instances/knapsack-200-2.dat
 Benchmarking instances/knapsack-50-2.dat
 Benchmarking instances/mix-100-2.dat
-benchmarks-cplex.sh: line 13: 57687 Killed: 9               /Applications/CPLEX_Studio2211/opl/bin/arm64_osx/oplrun opl/binary.mod $instance > benchmarks/binary-$(basename $instance .dat).out
+benchmarks-cplex.sh: line 19: 97251 Killed: 9               /Applications/CPLEX_Studio2211/opl/bin/arm64_osx/oplrun opl/binary.mod $instance > benchmarks_cplex/binary-$(basename $instance .dat).out
 Benchmarking instances/mix-200-2.dat
-benchmarks-cplex.sh: line 13: 57822 Killed: 9               /Applications/CPLEX_Studio2211/opl/bin/arm64_osx/oplrun opl/binary.mod $instance > benchmarks/binary-$(basename $instance .dat).out
+benchmarks-cplex.sh: line 19: 97373 Killed: 9               /Applications/CPLEX_Studio2211/opl/bin/arm64_osx/oplrun opl/binary.mod $instance > benchmarks_cplex/binary-$(basename $instance .dat).out
 Benchmarking instances/mix-50-2.dat
+benchmarks-cplex.sh: line 19: 97669 Killed: 9               /Applications/CPLEX_Studio2211/opl/bin/arm64_osx/oplrun opl/binary.mod $instance > benchmarks_cplex/binary-$(basename $instance .dat).out
 Cplex bigM1
 Benchmarking instances/bin_packing-100-2.dat
 Benchmarking instances/bin_packing-200-2.dat
@@ -33,3 +44,4 @@ Benchmarking instances/knapsack-50-2.dat
 Benchmarking instances/mix-100-2.dat
 Benchmarking instances/mix-200-2.dat
 Benchmarking instances/mix-50-2.dat
+(base) 
