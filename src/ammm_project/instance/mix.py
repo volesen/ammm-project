@@ -75,9 +75,8 @@ def generate(size: int, num_splits: int | None = None):
         squares += split_into_squares(r.width, r.height)
 
     # Double the squares
-    squares = squares + squares
-
-    capacity_fraction = random.uniform(0.5, 0.9)
+    # squares = squares + squares
+    capacity_fraction = 0.99
 
     return {
         "x": size,
@@ -88,4 +87,3 @@ def generate(size: int, num_splits: int | None = None):
         "p": [random.randint(1, 100) for _ in squares],
         "s": [s.size for s in squares],
     }
-
