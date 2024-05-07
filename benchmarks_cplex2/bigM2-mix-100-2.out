@@ -12,7 +12,7 @@ MIP Presolve eliminated 291 rows and 0 columns.
 Reduced MIP has 52200 rows, 42195 columns, and 187920 nonzeros.
 Reduced MIP has 41905 binaries, 290 generals, 0 SOSs, and 0 indicators.
 Presolve time = 0.03 sec. (69.67 ticks)
-Probing time = 0.03 sec. (13.94 ticks)
+Probing time = 0.02 sec. (13.94 ticks)
 Tried aggregator 1 time.
 Detecting symmetries...
 Reduced MIP has 52200 rows, 42195 columns, and 187920 nonzeros.
@@ -45,7 +45,7 @@ Root relaxation solution time = 0.48 sec. (1730.32 ticks)
 *     0+    0                         7061.0000     7298.0000             3.36%
       0     0        cutoff           7061.0000     7298.0000     3298    3.36%
       0     2     7298.0000   529     7061.0000     7298.0000     3298    3.36%
-Elapsed time = 6.23 sec. (14501.26 ticks, tree = 0.02 MB, solutions = 9)
+Elapsed time = 6.21 sec. (14501.26 ticks, tree = 0.02 MB, solutions = 9)
 *     1+    1                         7095.0000     7298.0000             2.86%
       1     3     7298.0000   527     7095.0000     7298.0000     3303    2.86%
       4     6     7298.0000   652     7095.0000     7298.0000     3812    2.86%
@@ -59,7 +59,7 @@ Elapsed time = 6.23 sec. (14501.26 ticks, tree = 0.02 MB, solutions = 9)
      57    56     7298.0000   848     7285.0000     7298.0000    11546    0.18%
      78    69     7298.0000   555     7285.0000     7298.0000    14913    0.18%
     147   112     7298.0000   864     7285.0000     7298.0000    20131    0.18%
-Elapsed time = 8.89 sec. (18343.69 ticks, tree = 10.27 MB, solutions = 14)
+Elapsed time = 8.63 sec. (18343.69 ticks, tree = 10.27 MB, solutions = 14)
     214   160     7298.0000   510     7285.0000     7298.0000    27576    0.18%
     300   252     7298.0000   572     7285.0000     7298.0000    37601    0.18%
     383   319     7298.0000   627     7285.0000     7298.0000    46142    0.18%
@@ -69,3 +69,39 @@ Elapsed time = 8.89 sec. (18343.69 ticks, tree = 10.27 MB, solutions = 14)
     727   540     7298.0000   838     7285.0000     7298.0000    84984    0.18%
     820   636     7298.0000   368     7285.0000     7298.0000    91285    0.18%
     936   681     7298.0000   462     7285.0000     7298.0000    99123    0.18%
+   1129   863     7298.0000   308     7285.0000     7298.0000   113584    0.18%
+Elapsed time = 14.90 sec. (27928.63 ticks, tree = 62.32 MB, solutions = 18)
+   1310   890     7298.0000   665     7285.0000     7298.0000   116878    0.18%
+   1459  1070     7298.0000   756     7285.0000     7298.0000   128278    0.18%
+   1621  1235     7298.0000   768     7285.0000     7298.0000   140889    0.18%
+   1774  1392     7298.0000   741     7285.0000     7298.0000   151691    0.18%
+   1948  1600     7298.0000   697     7285.0000     7298.0000   160690    0.18%
+   2131  1748     7298.0000   214     7285.0000     7298.0000   169346    0.18%
+   2284  1920     7298.0000   226     7285.0000     7298.0000   179900    0.18%
+   2449  2001     7298.0000    16     7285.0000     7298.0000   181820    0.18%
+*  2463+ 1937                         7298.0000     7298.0000             0.00%
+   2525  2086     7298.0000   110     7298.0000     7298.0000   190665    0.00%
+
+Implied bound cuts applied:  63
+Mixed integer rounding cuts applied:  141
+Zero-half cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    6.18 sec. (14475.34 ticks)
+Parallel b&c, 8 threads:
+  Real time             =   13.66 sec. (22247.99 ticks)
+  Sync time (average)   =    3.52 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   19.84 sec. (36723.32 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 7298
+
+<<< post process
+
+
+<<< done
+

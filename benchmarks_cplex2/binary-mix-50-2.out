@@ -6,7 +6,7 @@
 
 Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
 CPXPARAM_TimeLimit                               1800
-Found incumbent of value 0.000000 after 0.09 sec. (137.52 ticks)
+Found incumbent of value 0.000000 after 0.08 sec. (137.52 ticks)
 Presolve has eliminated 5169112 rows and 43450 columns...
 Presolve has improved bounds 5113 times...
 Aggregator has done 5114 substitutions...
@@ -36,8 +36,8 @@ MIP Presolve modified 45617 coefficients.
 Aggregator did 145340 substitutions.
 Reduced MIP has 9182227 rows, 951324 columns, and 24516370 nonzeros.
 Reduced MIP has 951324 binaries, 0 generals, 0 SOSs, and 0 indicators.
-Presolve time = 436.09 sec. (829566.61 ticks)
-Probing time = 3.97 sec. (809.34 ticks)
+Presolve time = 420.98 sec. (829566.61 ticks)
+Probing time = 4.17 sec. (809.34 ticks)
 Aggregator has done 4996 substitutions...
 Aggregator has done 44490 substitutions...
 Aggregator has done 53686 substitutions...
@@ -63,8 +63,8 @@ MIP Presolve modified 8168 coefficients.
 Aggregator did 146145 substitutions.
 Reduced MIP has 8316133 rows, 805179 columns, and 23460383 nonzeros.
 Reduced MIP has 805179 binaries, 0 generals, 0 SOSs, and 0 indicators.
-Presolve time = 322.52 sec. (660993.98 ticks)
-Probing time = 2.55 sec. (678.35 ticks)
+Presolve time = 309.00 sec. (660993.98 ticks)
+Probing time = 2.51 sec. (678.35 ticks)
 Aggregator has done 4598 substitutions...
 Aggregator has done 20641 substitutions...
 Aggregator has done 28509 substitutions...
@@ -88,8 +88,8 @@ MIP Presolve modified 6860 coefficients.
 Aggregator did 80490 substitutions.
 Reduced MIP has 7698459 rows, 724689 columns, and 22734903 nonzeros.
 Reduced MIP has 724689 binaries, 0 generals, 0 SOSs, and 0 indicators.
-Presolve time = 264.61 sec. (580604.97 ticks)
-Probing time = 2.45 sec. (636.00 ticks)
+Presolve time = 257.55 sec. (580604.97 ticks)
+Probing time = 2.22 sec. (636.00 ticks)
 Clique table members: 8465885.
 MIP emphasis: balance optimality and feasibility.
 MIP search method: dynamic search.
