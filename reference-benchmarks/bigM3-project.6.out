@@ -9,10 +9,9 @@ CPXPARAM_TimeLimit                               1800
 Found incumbent of value 0.000000 after 0.00 sec. (0.01 ticks)
 Tried aggregator 1 time.
 MIP Presolve eliminated 17 rows and 0 columns.
-MIP Presolve modified 224 coefficients.
 Reduced MIP has 140 rows, 136 columns, and 504 nonzeros.
 Reduced MIP has 120 binaries, 16 generals, 0 SOSs, and 0 indicators.
-Presolve time = 0.00 sec. (0.28 ticks)
+Presolve time = 0.00 sec. (0.27 ticks)
 Probing time = 0.00 sec. (0.14 ticks)
 Tried aggregator 1 time.
 Detecting symmetries...

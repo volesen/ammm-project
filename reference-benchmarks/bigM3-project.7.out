@@ -9,7 +9,6 @@ CPXPARAM_TimeLimit                               1800
 Found incumbent of value 0.000000 after 0.00 sec. (0.01 ticks)
 Tried aggregator 1 time.
 MIP Presolve eliminated 58 rows and 39 columns.
-MIP Presolve modified 284 coefficients.
 Reduced MIP has 188 rows, 171 columns, and 668 nonzeros.
 Reduced MIP has 152 binaries, 19 generals, 0 SOSs, and 0 indicators.
 Presolve time = 0.00 sec. (0.40 ticks)
@@ -52,11 +51,11 @@ Gomory fractional cuts applied:  2
 Root node processing (before b&c):
   Real time             =    0.03 sec. (24.20 ticks)
 Parallel b&c, 8 threads:
-  Real time             =    0.01 sec. (4.22 ticks)
-  Sync time (average)   =    0.01 sec.
+  Real time             =    0.02 sec. (4.22 ticks)
+  Sync time (average)   =    0.02 sec.
   Wait time (average)   =    0.00 sec.
                           ------------
-Total (root+branch&cut) =    0.03 sec. (28.42 ticks)
+Total (root+branch&cut) =    0.04 sec. (28.42 ticks)
 
 <<< solve
 

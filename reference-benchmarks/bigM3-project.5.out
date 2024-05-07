@@ -9,7 +9,7 @@ CPXPARAM_TimeLimit                               1800
 Found incumbent of value 0.000000 after 0.00 sec. (0.00 ticks)
 Tried aggregator 1 time.
 MIP Presolve eliminated 14 rows and 0 columns.
-MIP Presolve modified 178 coefficients.
+MIP Presolve modified 10 coefficients.
 Reduced MIP has 106 rows, 105 columns, and 385 nonzeros.
 Reduced MIP has 91 binaries, 14 generals, 0 SOSs, and 0 indicators.
 Presolve time = 0.00 sec. (0.21 ticks)
@@ -34,7 +34,7 @@ Root relaxation solution time = 0.00 sec. (0.22 ticks)
       0     0       15.0000    30        4.0000       15.0000       25  275.00%
 *     0+    0                           15.0000       15.0000             0.00%
       0     0        cutoff             15.0000       15.0000       25    0.00%
-Elapsed time = 0.01 sec. (3.75 ticks, tree = 0.01 MB, solutions = 3)
+Elapsed time = 0.01 sec. (3.74 ticks, tree = 0.01 MB, solutions = 3)
 
 Root node processing (before b&c):
   Real time             =    0.01 sec. (3.75 ticks)
