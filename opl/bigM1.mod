@@ -52,7 +52,7 @@ subject to {
     // Prevent overlapping of products
     // If two products are not selected, they cannot overlap
     // That is, one product must be to the left, right, above, or below the other
-    forall(i in P, j in P: i != j) {
+    forall(i in P, j in P: i < j) {
         xc[i] + s[i] <= xc[j] + M * (1 - left[i,j]);
         xc[i] >= xc[j] + s[j] - M * (1 - right[i,j]);
         yc[i] + s[i] <= yc[j] + M * (1 - below[i,j]);

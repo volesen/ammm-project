@@ -54,9 +54,9 @@ subject to {
     // i != j: 4611
     forall(i in P, j in P: i < j) {
         xc[i] + s[i] <= xc[j] + M * (1 - left[i,j]);
-        xc[j] + s[j] <= xc[i] + M * left[i,j];
+        xc[j] + s[j] <= xc[i] + M * (1 - left[j,i]);
         yc[i] + s[i] <= yc[j] + M * (1 - below[i,j]);
-        yc[j] + s[j] <= yc[i] + M * below[i,j];
+        yc[j] + s[j] <= yc[i] + M * (1 - below[j,i]);
         left[i,j] + below[i,j] + left[j,i] + below[j,i] >= X[i] + X[j] - 1;
     }
 }
