@@ -13,6 +13,9 @@ int x = ...;  // Width constraint
 int y = ...;  // Height constraint
 int c = ...;  // Capacity or weight limit
 
+range W = 1..x;
+range H = 1..y;
+
 int n = ...;  // Number of items
 
 range P = 1..n;  // Range of products
@@ -25,8 +28,8 @@ int M = x + y;
 
 // Decision variables
 dvar boolean X[i in P]; // 1 if product i is selected, 0 otherwise
-dvar int yc[i in P]; // y-coordinate of bottom left corner of product i
-dvar int xc[i in P]; // x-coordinate of bottom left corner of product i
+dvar int xc[i in P] in W; // x-coordinate of bottom left corner of product i
+dvar int yc[i in P] in H; // y-coordinate of bottom left corner of product i
 
 dvar boolean left[i in P, j in P];
 dvar boolean below[i in P, j in P];
@@ -50,8 +53,6 @@ subject to {
     // Prevent overlapping of products
     // If two products are not selected, they cannot overlap
     // That is, one product must be to the left, right, above, or below the other
-    // i < j:  4611
-    // i != j: 4611
     forall(i in P, j in P: i < j) {
         xc[i] + s[i] <= xc[j] + M * (1 - left[i,j]);
         xc[j] + s[j] <= xc[i] + M * (1 - left[j,i]);

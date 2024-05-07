@@ -32,8 +32,6 @@ dvar int xc[i in P] in W; // x-coordinate of bottom left corner of product i
 dvar int yc[i in P] in H; // y-coordinate of bottom left corner of product i
 
 dvar boolean left[i in P, j in P];
-dvar boolean right[i in P, j in P];
-dvar boolean above[i in P, j in P];
 dvar boolean below[i in P, j in P];
 
 // Objective function to maximize total profit
@@ -55,11 +53,13 @@ subject to {
     // Prevent overlapping of products
     // If two products are not selected, they cannot overlap
     // That is, one product must be to the left, right, above, or below the other
+    // i < j:  4611
+    // i != j: 4611
     forall(i in P, j in P: i < j) {
-        xc[i] + s[i] <= xc[j] + M * (1 - left[i,j]);
-        xc[i] >= xc[j] + s[j] - M * (1 - right[i,j]);
-        yc[i] + s[i] <= yc[j] + M * (1 - below[i,j]);
-        yc[i] >= yc[j] + s[j] - M * (1 - above[i,j]);
-        left[i,j] + right[i,j] + above[i,j] + below[i,j] >= X[i] + X[j] - 1;
+        xc[i] + s[i] <= xc[j] + x * (1 - left[i,j]);
+        xc[j] + s[j] <= xc[i] + x * (1 - left[j,i]);
+        yc[i] + s[i] <= yc[j] + y * (1 - below[i,j]);
+        yc[j] + s[j] <= yc[i] + y * (1 - below[j,i]);
+        left[i,j] + below[i,j] + left[j,i] + below[j,i] >= X[i] + X[j] - 1;
     }
 }

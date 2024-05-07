@@ -26,8 +26,8 @@ int s[i in P] = ...;  // Side length of square box i
 
 // Decision variables
 dvar boolean X[i in P]; // 1 if product i is selected, 0 otherwise
-dvar int yc[i in P]; // y-coordinate of bottom left corner of product i
-dvar int xc[i in P]; // x-coordinate of bottom left corner of product i
+dvar int xc[i in P] in W; // x-coordinate of bottom left corner of product i
+dvar int yc[i in P] in H; // y-coordinate of bottom left corner of product i
 
 // Objective function to maximize total profit
 maximize sum(i in P) p[i] * X[i];
@@ -49,7 +49,7 @@ subject to {
     // If two products are selected, they cannot overlap
     // That is, one product must be to the left, right, above, or below the other
     noOverlap:
-        forall(i in P, j in P: i < j)
+        forall(i in P, j in P: i != j)
             (X[i] == 1 && X[j] == 1) =>
             ( xc[i] + s[i] <= xc[j]
             || xc[j] + s[j] <= xc[i]
