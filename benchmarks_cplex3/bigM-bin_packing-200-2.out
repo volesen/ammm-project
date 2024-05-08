@@ -1,0 +1,105 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_TimeLimit                               1800
+Found incumbent of value 0.000000 after 0.05 sec. (66.48 ticks)
+Presolve has eliminated 0 rows and 243542 columns...
+Tried aggregator 3 times.
+MIP Presolve eliminated 989 rows and 243542 columns.
+MIP Presolve modified 852397 coefficients.
+Aggregator did 1339481 substitutions.
+Reduced MIP has 2070107 rows, 1828047 columns, and 5236153 nonzeros.
+Reduced MIP has 1218204 binaries, 988 generals, 0 SOSs, and 974168 indicators.
+Presolve time = 6.42 sec. (3741562.27 ticks)
+Elapsed time = 64.31 sec. (10000.13 ticks) for 26% of probing
+Elapsed time = 503.69 sec. (20000.35 ticks) for 55% of probing
+Probing fixed 0 vars, tightened 243542 bounds.
+Probing time = 1580.92 sec. (37931.99 ticks)
+Tried aggregator 2 times.
+Detecting symmetries...
+Elapsed time for symmetry detection = 3.41 sec. (10000.42 ticks)
+Elapsed time for symmetry detection = 6.60 sec. (20018.45 ticks)
+Elapsed time for symmetry detection = 9.80 sec. (30036.47 ticks)
+Elapsed time for symmetry detection = 13.05 sec. (40054.50 ticks)
+Elapsed time for symmetry detection = 16.30 sec. (50072.53 ticks)
+Elapsed time for symmetry detection = 19.55 sec. (60090.55 ticks)
+Elapsed time for symmetry detection = 22.78 sec. (70108.58 ticks)
+Elapsed time for symmetry detection = 26.03 sec. (80126.61 ticks)
+Elapsed time for symmetry detection = 29.28 sec. (90144.63 ticks)
+Elapsed time for symmetry detection = 32.52 sec. (100162.66 ticks)
+Elapsed time for symmetry detection = 35.76 sec. (110180.69 ticks)
+Elapsed time for symmetry detection = 39.00 sec. (120198.71 ticks)
+Elapsed time for symmetry detection = 42.24 sec. (130216.74 ticks)
+Elapsed time for symmetry detection = 45.46 sec. (140234.77 ticks)
+Elapsed time for symmetry detection = 48.70 sec. (150252.79 ticks)
+Elapsed time for symmetry detection = 51.95 sec. (160270.82 ticks)
+Elapsed time for symmetry detection = 55.18 sec. (170288.84 ticks)
+Elapsed time for symmetry detection = 58.42 sec. (180306.87 ticks)
+Elapsed time for symmetry detection = 61.66 sec. (190324.90 ticks)
+Elapsed time for symmetry detection = 64.90 sec. (200342.92 ticks)
+Elapsed time for symmetry detection = 68.14 sec. (210360.95 ticks)
+Elapsed time for symmetry detection = 71.37 sec. (220378.98 ticks)
+Elapsed time for symmetry detection = 74.61 sec. (230397.00 ticks)
+Elapsed time for symmetry detection = 77.86 sec. (240415.03 ticks)
+Elapsed time for symmetry detection = 81.10 sec. (250433.06 ticks)
+Elapsed time for symmetry detection = 84.34 sec. (260451.08 ticks)
+Elapsed time for symmetry detection = 87.59 sec. (270469.11 ticks)
+Elapsed time for symmetry detection = 90.84 sec. (280487.13 ticks)
+Elapsed time for symmetry detection = 94.09 sec. (290505.16 ticks)
+Elapsed time for symmetry detection = 97.32 sec. (300523.19 ticks)
+Elapsed time for symmetry detection = 100.57 sec. (310541.21 ticks)
+Elapsed time for symmetry detection = 103.04 sec. (320559.24 ticks)
+Elapsed time for symmetry detection = 106.28 sec. (330577.27 ticks)
+Elapsed time for symmetry detection = 109.53 sec. (340595.29 ticks)
+Elapsed time for symmetry detection = 112.78 sec. (350613.32 ticks)
+Elapsed time for symmetry detection = 116.03 sec. (360631.35 ticks)
+Elapsed time for symmetry detection = 119.23 sec. (370649.37 ticks)
+Elapsed time for symmetry detection = 122.34 sec. (380667.40 ticks)
+Elapsed time for symmetry detection = 125.60 sec. (390685.43 ticks)
+Elapsed time for symmetry detection = 128.84 sec. (400703.45 ticks)
+Elapsed time for symmetry detection = 132.09 sec. (410721.48 ticks)
+Elapsed time for symmetry detection = 135.37 sec. (420739.50 ticks)
+Elapsed time for symmetry detection = 138.61 sec. (430757.53 ticks)
+Elapsed time for symmetry detection = 141.86 sec. (440775.56 ticks)
+Elapsed time for symmetry detection = 145.13 sec. (450793.58 ticks)
+Elapsed time for symmetry detection = 148.37 sec. (460811.61 ticks)
+Elapsed time for symmetry detection = 151.57 sec. (470829.64 ticks)
+Elapsed time for symmetry detection = 154.82 sec. (480847.66 ticks)
+Elapsed time for symmetry detection = 158.06 sec. (490865.69 ticks)
+Elapsed time for symmetry detection = 161.31 sec. (500883.72 ticks)
+Elapsed time for symmetry detection = 164.55 sec. (510901.74 ticks)
+Elapsed time for symmetry detection = 167.80 sec. (520919.77 ticks)
+Elapsed time for symmetry detection = 171.05 sec. (530937.79 ticks)
+Elapsed time for symmetry detection = 174.30 sec. (540955.82 ticks)
+Elapsed time for symmetry detection = 177.55 sec. (550973.85 ticks)
+Elapsed time for symmetry detection = 180.79 sec. (560991.87 ticks)
+Elapsed time for symmetry detection = 184.04 sec. (571009.90 ticks)
+Elapsed time for symmetry detection = 187.29 sec. (581027.93 ticks)
+Elapsed time for symmetry detection = 190.53 sec. (591045.95 ticks)
+Elapsed time for symmetry detection = 193.78 sec. (601063.98 ticks)
+Elapsed time for symmetry detection = 197.03 sec. (611082.01 ticks)
+Presolve time = 207.47 sec. (622372.24 ticks)
+
+Root node processing (before b&c):
+  Real time             = 1800.10 sec. (4403628.89 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) = 1800.10 sec. (4403628.89 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 0
+
+<<< post process
+
+
+<<< done
+
