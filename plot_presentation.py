@@ -45,7 +45,7 @@ data = {
 df = pd.DataFrame(data)
 
 # Function to plot the data
-def plot_data(df, title, instances):
+def plot_data(df, title, instances, filename):
     fig, ax1 = plt.subplots(figsize=(10, 6))
 
     ax1.set_xlabel('Solver')
@@ -82,13 +82,14 @@ def plot_data(df, title, instances):
     ax1.legend(lines, labels, loc='center left', bbox_to_anchor=(1.12, 0.5), borderaxespad=0.)
 
     fig.tight_layout()
+    plt.savefig(filename, format='pdf', transparent=True)
     plt.show()
 
 # Plot for Bin Packing
-plot_data(df, "Bin Packing Performance", ["Bin packing (n=50)", "Bin packing (n=100)", "Bin packing (n=200)"])
+plot_data(df, "Bin Packing Performance", ["Bin packing (n=50)", "Bin packing (n=100)", "Bin packing (n=200)"], "bin_packing_performance.pdf")
 
 # Plot for Knapsack
-plot_data(df, "Knapsack Performance", ["Knapsack (n=50)", "Knapsack (n=100)", "Knapsack (n=200)"])
+plot_data(df, "Knapsack Performance", ["Knapsack (n=50)", "Knapsack (n=100)", "Knapsack (n=200)"], "knapsack_performance.pdf")
 
 # Plot for Mix
-plot_data(df, "Mix Performance", ["Mix (n=50)", "Mix (n=100)", "Mix (n=200)"])
+plot_data(df, "Mix Performance", ["Mix (n=50)", "Mix (n=100)", "Mix (n=200)"], "mix_performance.pdf")
