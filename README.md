@@ -9,11 +9,11 @@ The project is structured as follows:
 - `ammm_project/`: Python package containing the implementation of the project.
 - `tests/`: Unit tests for the project.
 - `notebooks/`: Jupyter notebooks used for the development of the project.
-- `opl/`: OPL models used for the project.
-- `reference/`: Reference data used for testing the project.
-- `instances/`: Generated instances of the problem.
-- `results/`: Results of the project.
 - `scripts/`: Scripts used for running the project.
+- `reference/`: Reference instances used for testing and benchmarking.
+- `instances/`: Generated instances of the problem.
+- `opl/`: OPL models used for the project.
+- `results/`: Results of the project.
 
 ## Quick start
 
