@@ -1,4 +1,4 @@
-mkdir -p reference-benchmarks
+mkdir -p cplex-reference-benchmarks
 
 echo "Cplex binary"
 for instance in reference/*.dat; do
