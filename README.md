@@ -1,6 +1,6 @@
 # ammm-project
 
-Describe your project here.
+Solving a 2D bin packing and knapsack problem using MILP and metahuristic algorithms.
 
 ## Project structure
 
