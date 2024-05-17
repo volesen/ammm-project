@@ -2,20 +2,42 @@
 
 Describe your project here.
 
-```bash
-/Applications/CPLEX_Studio2211/opl/bin/arm64_osx/oplrun opl/baseline.mod reference/project.9.dat 
-```
+## Project structure
+
+The project is structured as follows:
+
+- `ammm_project/`: Python package containing the implementation of the project.
+- `tests/`: Unit tests for the project.
+- `notebooks/`: Jupyter notebooks used for the development of the project.
+- `opl/`: OPL models used for the project.
+- `reference/`: Reference data used for testing the project.
+- `instances/`: Generated instances of the problem.
+- `results/`: Results of the project.
+- `scripts/`: Scripts used for running the project.
+
+## Quick start
+
+Prior to running the project, you need to install the required dependencies.
+You can do so by running the following command:
 
 ```bash
-rye run ammm-project reference/project.8.dat
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
+To run the notebooks, you should additionally install the development dependencies:
+```bash
+pip install -r requirements-dev.txt
+```
 
-## Stopping ciriteria:
+Then you should be able to run the following two commands:
+- `ammm-project` which solves a given instance of the problem - see the `--help` flag for more information.
+- `generate-instance` which generates a random instance of the problem - see the `--help` flag for more information.
 
-- Max execution time
-- Max time since last improvement (incumbent update)
+## Replicating the results
 
+To replicate the results, you can run the commands in the `scripts/` folder and additionally run the notebooks in the `notebooks/` folder to generate the plots.
 
 ## References
 
